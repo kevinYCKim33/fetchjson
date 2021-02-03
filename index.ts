@@ -18,14 +18,20 @@ axios.get(url).then((response) => {
 
   const id = todo.id;
   const title = todo.title;
-  const finished = todo.completed;
+  const completed = todo.completed;
 
+  logTodo(id, title, completed);
+});
+
+// helps catch prevent calling functions with wrong order of arguments
+// my argument: why don't you pass in an object for functions instead??
+const logTodo = (id: number, title: string, completed: boolean) => {
   console.log(`
     The Todo with ID: ${id}
     Has a title of: ${title}
-    Is it finished? ${finished}
+    Is it finished? ${completed}
   `);
-});
+};
 
 /*
 {
